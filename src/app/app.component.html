@@ -1,20 +1,120 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<div class="container">
+  <br />
+  <h1>Pipes</h1>
+  <hr />
 
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Variable</th>
+        <th scope="col">Pipe</th>
+        <th scope="col">Producto</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{ nombre }}</td>
+        <td>uppercase</td>
+        <td>{{ nombre | uppercase }}</td>
+      </tr>
+      <tr>
+        <td>{{ nombre }}</td>
+        <td>lowercase</td>
+        <td>{{ nombre | lowercase }}</td>
+      </tr>
+      <tr>
+        <td>{{ nombre }}</td>
+        <td>slice:3</td>
+        <td>{{ nombre | slice: 3 }}</td>
+      </tr>
+      <tr>
+        <td>{{ nombre }}</td>
+        <td>slice:0:3</td>
+        <td>{{ nombre | slice: 0:3 }}</td>
+      </tr>
+      <tr>
+        <td>{{ arreglo }}</td>
+        <td>slice:1:5</td>
+        <td>{{ arreglo | slice: 1:5 }}</td>
+      </tr>
+      <tr>
+        <td>{{ PI }}</td>
+        <td>number: "1.0-5"</td>
+        <td>{{ PI | number: "1.0-5" }}</td>
+      </tr>
+      <tr>
+        <td>{{ a }}</td>
+        <td>percent: "2.2-2"</td>
+        <td>{{ a | percent: "2.2-2" }}</td>
+      </tr>
+      <tr>
+        <td>{{ salario }}</td>
+        <td>currency</td>
+        <td>{{ salario | currency }}</td>
+      </tr>
+      <tr>
+        <td>{{ salario }}</td>
+        <td>currency:'COP'</td>
+        <td>{{ salario | currency: "COP" }}</td>
+      </tr>
+      <tr>
+        <td>{{ salario }}</td>
+        <td>currency:"COP":"symbol-narrow"</td>
+        <td>{{ salario | currency: "COP":"symbol-narrow" }}</td>
+      </tr>
+      <tr>
+        <td>{{ salario }}</td>
+        <td>currency:"COP":"symbol-narrow":'4.0-0'</td>
+        <td>{{ salario | currency: "COP":"symbol-narrow":"4.0-0" }}</td>
+      </tr>
+      <tr>
+        <td>{{ salario }}</td>
+        <td>number: ".2-2"</td>
+        <td>{{ salario | number: ".2-2" }}</td>
+      </tr>
+      <tr>
+        <td>{{ valorDePromesa }}</td>
+        <td>async</td>
+        <td>{{ valorDePromesa | async }}</td>
+      </tr>
+      <tr>
+        <td>{{ fecha }}</td>
+        <td>date</td>
+        <td>{{ fecha | date }}</td>
+      </tr>
+      <tr>
+        <td>{{ fecha }}</td>
+        <td>date:"medium"</td>
+        <td>{{ fecha | date: "medium" }}</td>
+      </tr>
+      <tr>
+        <td>{{ fecha }}</td>
+        <td>date: "MMMM - dd"</td>
+        <td>{{ fecha | date: "MMMM - dd" }}</td>
+      </tr>
+      <tr>
+        <td>{{ fecha }}</td>
+        <td>date: "full"</td>
+        <td>{{ fecha | date: "full" }}</td>
+      </tr>
+      <tr>
+        <td>{{ nombre2 }}</td>
+        <td>capitalizado</td>
+        <td>{{ nombre2 | capitalizado }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <br />
+  <h1>Slice</h1>
+  <hr />
+
+  <ul *ngFor="let item of arreglo | slice: 0:5">
+    <li>{{ item }}</li>
+  </ul>
+
+  <h1>JSON</h1>
+  <pre>
+    {{ heroe | json }}
+  </pre>
+</div>
